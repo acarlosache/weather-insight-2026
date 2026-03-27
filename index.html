@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Insight 2026</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+        <section class="search-section">
+            <input type="text" id="city-input" placeholder="Busque uma cidade...">
+            <button id="search-btn">
+                <i data-lucide="search"></i>
+            </button>
+        </section>
+
+        <article class="weather-card" id="weather-result">
+            <div class="main-info">
+                <h1 id="city-name">São Paulo</h1>
+                <p id="date">Aguardando busca...</p>
+                <div class="temp-container">
+                    <span id="temp-value">--</span><span class="unit">°C</span>
+                </div>
+                <p id="description">Digite uma cidade acima</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <i data-lucide="droplets"></i>
+                    <span>Umidade</span>
+                    <strong id="humidity">--%</strong>
+                </div>
+                <div class="detail-item">
+                    <i data-lucide="wind"></i>
+                    <span>Vento</span>
+                    <strong id="wind-speed">-- km/h</strong>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <i id="insight-icon" data-lucide="lightbulb"></i>
+                <p id="suggestion">Pronto para descobrir o clima?</p>
+            </div>
+        </article>
+    </main>
+
+   <script src="script.js"></script>
+    
+    <script>
+        // Isso garante que os ícones carreguem assim que abrir a página
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

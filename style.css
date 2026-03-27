@@ -1,0 +1,119 @@
+:root {
+    --primary: #38bdf8;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Busca */
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#city-input {
+    flex: 1;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: white;
+    outline: none;
+}
+
+#search-btn {
+    background: var(--primary);
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#search-btn:hover { transform: scale(1.05); }
+
+/* Card */
+.weather-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    .weather-card {
+    /* ... seu código atual ... */
+    transition: all 0.5s ease-in-out;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+}
+
+.main-info h1 { font-size: 2rem; margin-bottom: 5px; }
+#date { color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px; }
+
+.temp-container { font-size: 4rem; font-weight: bold; margin: 15px 0; }
+.unit { font-size: 1.5rem; vertical-align: top; color: var(--primary); }
+
+#description { text-transform: capitalize; color: #cbd5e1; margin-bottom: 20px; }
+
+.divider { border: 0; border-top: 1px solid var(--glass-border); margin: 20px 0; }
+
+/* Detalhes */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.detail-item i { color: var(--primary); }
+
+/* Caixa de Sugestão */
+.insight-box {
+    margin-top: 25px;
+    background: rgba(56, 189, 248, 0.15);
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
